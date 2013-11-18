@@ -1,0 +1,23 @@
+// common defs
+@titlebar-height: 3.0rem;
+
+// IMPORTANT: You should only use @phone, @tablet, @desktop - not the @device-xxx ones
+// ANY changes here require you to update the phone, tablet, and desktop code in vg.services.device.
+@device-tablet-webkit-high-pixel-ratio: ~"only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.1)";
+@device-tablet-high-resolution: ~"only screen and (min-device-width: 1024px) and (min-resolution: 1.1dppx)";
+@device-tablet: ~"only screen and (min-device-width: 481px) and (max-device-width: 1024px)";
+@device-desktop-webkit-low-pixel-ratio: ~"only screen and (min-device-width: 1024px) and (-webkit-max-device-pixel-ratio: 1)";
+@device-desktop-moz-low-pixel-ratio: ~"only screen and (min-device-width: 1024px) and (max--moz-device-pixel-ratio: 1)";
+@device-desktop-low-resolution: ~"only screen and (min-device-width: 1024px) and (max-resolution: 96dpi)";
+
+@portrait: ~"(orientation: portrait)";
+@landscape: ~"(orientation: landscape)";
+
+@phone: ~"only screen and (max-device-width: 480px)";
+@tablet: @device-tablet ~"," @device-tablet-webkit-high-pixel-ratio ~"," @device-tablet-high-resolution;
+@desktop: @device-desktop-webkit-low-pixel-ratio ~"," @device-desktop-moz-low-pixel-ratio ~"," @device-desktop-low-resolution;
+
+@phone-portrait: @phone ~" and " @portrait;
+@phone-landscape: @phone ~" and " @landscape;
+@tablet-portrait: @device-tablet ~" and " @portrait ~"," @device-tablet-webkit-high-pixel-ratio ~" and " @portrait ~"," @device-tablet-high-resolution ~" and " @portrait;
+@tablet-landscape: @device-tablet ~" and " @landscape ~"," @device-tablet-webkit-high-pixel-ratio ~" and " @landscape ~"," @device-tablet-high-resolution ~" and " @landscape;

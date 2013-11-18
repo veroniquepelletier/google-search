@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <!-- css is not minified -->
+        <link type="text/css" rel="stylesheet" href="/css/styles.css"></link>
+        <style>
+            /* We want this rule on the first render of the page */
+            [ng-cloak] { display:none !important; }
+        </style>
+    </head>
+    
+    <body>
+        <div class='app'>
+            <titlebar></titlebar>
+            <div class='view' ng-view></div>
+        </div>
+    </body>
+    <!-- Scripts are not minified -->
+    <script type="text/javascript" src="/lib/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/panes/home/home.js"></script>
+    <script type="text/javascript" src="/panes/about/about.js"></script>
+    <script type="text/javascript" src="/widgets/titlebar/titlebar.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+</html>
