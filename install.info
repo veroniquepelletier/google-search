@@ -1,0 +1,20 @@
+Angularjs nodejs grunt boilerplate installation
+
+1 - install grunt
+npm install -g grunt-cli
+
+2 - npm install all packages from package.json
+npm install
+
+3 - run grunt
+grunt watch
+
+4 - run nodejs server
+node server
+
+5 - test app
+http://localhost:6004/index.html
+
+
+
+The minified css files will be in dist/css
