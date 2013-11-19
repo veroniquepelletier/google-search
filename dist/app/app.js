@@ -1,11 +1,12 @@
 'use strict';
 
 var app = angular.module('app', [
+    'app.services',
+    'app.directives',
     'app.panes.home',
     'app.panes.about',
     'app.widgets.titlebar',
-    'localization',
-    'common.localization'
+    'localization'
 ]);
 
 app.config(['$provide', '$routeProvider', function($provide, $routeProvider) {

@@ -1,6 +1,6 @@
 {
-  "name": "vg",
-  "description": "Visual Guide",
+  "name": "google api test",
+  "description": "google api testing",
   "version": "1.0.0",
   "engines": {
     "node": ">= 0.6.0"

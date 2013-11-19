@@ -1,8 +1,3 @@
-/*
-  server.js
-  copyright (c) lvl studio inc 2013
-  all rights reserved
-*/
 var express = require('express'),
     http = require('http');
 
