@@ -33,9 +33,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // metadata.
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+        banner: '/*! app - v1.0 - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '* copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+        '* copyright (c) <%= grunt.template.today("yyyy") %> app;' +
         ' all rights reserved */\n',
         // task configuration; order is not important here
         notify: {
@@ -114,18 +114,58 @@ module.exports = function (grunt) {
         // watch will auto-grunt anything that has a rule set up here
         watch: {
             files: ['Gruntfile.js', 'src/**'],
-            tasks: ['clean:all', 'copy:all', 'src', 'less']
+            tasks: ['clean:all', 'copy:all', 'src', 'less', 'concat' /*, 'nodewebkit' */]
         },
+
+        concat: {
+            options: {
+                banner: '<%= banner %>',
+                stripBanners: true
+            },
+            lib: {
+                src: [
+                    'src/lib/angular.min.js',  'bootstrap/bootstrap.js', 'src/lib/jquery.js'
+                ],
+                dest: 'dist/app-lib.js'
+            },
+            src: {
+                src: [
+                    'src/**/*.js'
+                ],
+                dest: 'dist/app.js'
+            },
+            css: {
+                src: [
+                    'dist/bootstrap/css/bootstrap-theme.css',
+                    'dist/bootstrap/css/bootstrap.css',
+                    'dist/css/**/*.css' // todo: this should be less.dist.dest or something
+                ],
+                dest: 'dist/styles.css'
+            }
+        },
+
+        nodewebkit: {
+            options: {
+                build_dir: './build', // Where the build version of my node-webkit app is saved
+                mac: false, // We want to build it for mac
+                win: false, // We want to build it for win
+                linux32: false, // We don't need linux32
+                linux64: true // We don't need linux64
+            },
+            src: ['dist/**/*'] // Your node-wekit app
+          }
 
     });
 
     // plugins
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('assemble-less');
+    grunt.loadNpmTasks('grunt-node-webkit-builder');
     grunt.loadNpmTasks('grunt-notify');
 
 
