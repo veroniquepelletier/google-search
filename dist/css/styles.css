@@ -11,7 +11,7 @@
   height: 100%;
   position: absolute;
   display: block;
-  top: 6.0rem;
+  top: 5.0rem;
   left: 0;
   background-color: white;
 }
@@ -30,12 +30,21 @@
   height: 100%;
 }
 
+.widget-search {
+  position: absolute;
+  display: inline-block;
+  max-width: 30.0rem;
+}
+.widget-search .search-input {
+  max-width: 50.0rem;
+}
+
 .widget-titlebar {
   width: 100%;
-  height: 3.0rem;
+  height: 5.0rem;
   background-color: grey;
   color: white;
-  position: absolute;
+  display: table;
   top: 0;
   left: 0;
 }

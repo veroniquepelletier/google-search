@@ -7,8 +7,17 @@ widget.directive('titlebar', [function () {
         scope: true,
         templateUrl: 'widgets/titlebar/titlebar.html',
         replace: false,
-        link: function(scope, element) {
-            console.log('new titlebar');
+        link: function(scope) {
+            scope.navigation = [
+                {name: "HOME", url: '/home'},
+                {name: "ABOUT", url: '/about'}
+            ];
+            
+            scope.selected = scope.navigation[0];
+            
+            scope.onChangeRoute = function (item) {
+                scope.selected = item;
+            }
         }
     }
 }]);

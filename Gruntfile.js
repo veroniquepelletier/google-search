@@ -143,8 +143,5 @@ module.exports = function (grunt) {
     grunt.registerTask('prd', ['clean:dev', 'src']);
 
 
-    grunt.registerTask('deploy-local', ['clean:all', 'copy:localConfig', 'src']);
-    grunt.registerTask('deploy-local-pds1',  ['clean:all', 'copy:pds1Config', 'src']);
-
 
 };
