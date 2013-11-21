@@ -1,6 +1,4 @@
-'use strict';
-
-var app = angular.module('app', [
+angular.module('app', [
     'app.services',
     'app.directives',
     'app.panes.home',
@@ -8,20 +6,15 @@ var app = angular.module('app', [
     'app.widgets.titlebar',
     'app.widgets.search',
     'localization'
-]);
-
-app.config(['$provide', '$routeProvider', '$locationProvider', function($provide, $routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
-    
+])
+.config(['$provide', '$routeProvider', function($provide, $routeProvider) {
     $provide.factory('$routeProvider', function () {
         return $routeProvider;
     });
-}]);
-
-app.run(['$routeProvider', function($routeProvider) {
+}])
+.run(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: '/panes/home/home.html'
+        templateUrl: 'panes/home/home.html'
     }).otherwise({
         redirectTo: '/'
     });

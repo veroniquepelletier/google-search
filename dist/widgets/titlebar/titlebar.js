@@ -1,7 +1,4 @@
-"use strict"
-var widget = angular.module('app.widgets.titlebar', []);
-
-widget.directive('titlebar', [function () {
+angular.module('app.widgets.titlebar', []).directive('titlebar', [function () {
     return {
         restrict: 'EA',
         scope: true,
@@ -9,14 +6,14 @@ widget.directive('titlebar', [function () {
         replace: false,
         link: function(scope) {
             scope.navigation = [
-                {name: "HOME", url: '/home'},
-                {name: "ABOUT", url: '/about'}
+                {name: "SOURCE", file: 'app.js'},
+                {name: "STYLES", file: 'styles.css'},
+                {name: "LIB", file: 'app-lib.js'}
             ];
-            
-            scope.selected = scope.navigation[0];
-            
-            scope.onChangeRoute = function (item) {
-                scope.selected = item;
+            scope.onClick = function (item) {
+                if (item.file) {
+                    window.open(item.file);
+                }
             }
         }
     }

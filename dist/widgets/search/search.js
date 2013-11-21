@@ -1,6 +1,4 @@
-var widget = angular.module('app.widgets.search', []);
-
-module.directive('search', ['googleMapSvc', function (googleMapSvc) {
+angular.module('app.widgets.search', []).directive('search', ['googleMapSvc', function (googleMapSvc) {
     var id = 'search-input';
     return {
         restrict: 'EA',

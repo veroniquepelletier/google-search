@@ -1,10 +1,8 @@
-var module = angular.module('app.directives', []);
-
-module.directive('googlemap', ['googleMapSvc', function (googleMapSvc) {
+angular.module('app.directives', []).directive('googlemap', ['googleMapSvc', function (googleMapSvc) {
     var id = 'map-canvas';
     return {
         restrict: 'E',
-        template: "<div id='" + id + "' style='width: 100%; height: 100%'></div>",
+        template: "<div id='" + id + "' style='width: 800px; height: 750px'></div>",
         link: function () {
             googleMapSvc.createMap(id);
             googleMapSvc.setCurrentLocation();

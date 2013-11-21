@@ -1,0 +1,23 @@
+{
+  "main": "index.html",
+  "name": "app",
+  "description": "app demo for google api",
+  "version": "0.1.0",
+  "keywords": [],
+  "window": {
+    "title": "google api search",
+    "icon": "link.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 800,
+    "position": "mouse",
+    "min_width": 800,
+    "min_height": 800,
+    "max_width": 800,
+    "max_height": 600
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

@@ -15,6 +15,22 @@ angular.module("localization", []).service("localization", function () {
         "HOME": {
             "en-us": "Home",
             "fr-ca": "Accueil"
+        },
+        "SOURCE": {
+            "en-us": "Source code",
+            "fr-ca": "Code source"
+        },
+        "STYLES": {
+            "en-us": "Styles",
+            "fr-ca": "styles"
+        },
+        "LIB": {
+            "en-us": "Librairies",
+            "fr-ca": "Librairies"
+        },
+        "TMPL": {
+            "en-us": "Templates",
+            "fr-ca": "Modeles"
         }
     }
 });

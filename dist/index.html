@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="app">
     <head>
-        <!-- css is not minified -->
-        <link type="text/css" rel="stylesheet" href="/css/styles.css"></link>
-        <link href='bootstrap/css/bootstrap.min.css' rel='stylesheet' media='screen'>
+        <!-- application styles and third party css -->
+        <link type="text/css" rel="stylesheet" href="styles.css"></link>
         <style>
-            /* We want this rule on the first render of the page */
             [ng-cloak] { display:none !important; }
         </style>
     </head>
@@ -16,20 +14,11 @@
             <div class='view' ng-view></div>
         </div>
     </body>
-
-    <!-- libs -->
-    <script type="text/javascript" src="/lib/angular.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src='bootstrap/js/bootstrap.min.js'></script>
+    <!-- third party libraries -->
+    <script type="text/javascript" src='app-lib.js'></script>
+    <!-- application code -->
+    <script type="text/javascript" src='app.js'></script>
+    <!-- application code -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBQHwe7duV17g9Qi9D5d5WV-MMRPrqEEuA&sensor=false"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-    <!-- Scripts are not minified -->
-    <script type="text/javascript" src="/assets/localization/localization.js"></script>
-    <script type="text/javascript" src="/services/services.js"></script>
-    <script type="text/javascript" src="/directives/directives.js"></script>
-    <script type="text/javascript" src="/panes/home/home.js"></script>
-    <script type="text/javascript" src="/panes/about/about.js"></script>
-    <script type="text/javascript" src="/widgets/titlebar/titlebar.js"></script>
-    <script type="text/javascript" src="/widgets/search/search.js"></script>
-    <script type="text/javascript" src="/app/app.js"></script>
 </html>
