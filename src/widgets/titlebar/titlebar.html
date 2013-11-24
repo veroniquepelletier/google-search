@@ -3,10 +3,8 @@
         <div class="navbar-header">
             <a class="navbar-brand">{{'APP_TITLE' | i18n}}</a>
         </div>
-        <div class='button-group' ng-repeat='item in navigation' ng-click="onChangeRoute(item)">
-            <ul class="nav navbar-nav">
-                <li ng-class='{active: item == selected}'><a ng-href="{{item.url}}">{{item.name | i18n}}</a></li>
-            </ul>
+        <div class='button-group' ng-repeat='item in navigation' ng-click="onClick(item)">
+            <button type="button" class="btn btn-primary btn-large">{{item.name | i18n}}</button>
       </div>
     </nav>
 </div>
